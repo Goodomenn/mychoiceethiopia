@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { 
   FiArrowRight, 
@@ -9,10 +9,12 @@ import {
   FiClock, 
   FiCheckCircle, 
   FiShield, 
-  FiAward,
+  FiAward, 
   FiMap,
   FiTruck,
-  FiFileText
+  FiFileText,
+  FiChevronLeft,
+  FiChevronRight
 } from 'react-icons/fi'
 import { 
   FaSignHanging, 
@@ -131,23 +133,102 @@ const features = [
   }
 ]
 
+// Authentic Ethiopian landmark images uploaded by user for the hero slideshow
+const heroSlides = [
+  {
+    id: 1,
+    image: '/hero-slides/slide-1-lalibela.png',
+    title: 'Lalibela Rock-Hewn Churches',
+    location: 'Lalibela, Amhara',
+    badge: 'UNESCO World Heritage'
+  },
+  {
+    id: 2,
+    image: '/hero-slides/slide-2-gondar-castles.png',
+    title: 'Fasil Ghebbi Royal Enclosure',
+    location: 'Gondar, Camelot of Africa',
+    badge: '17th Century Imperial Citadel'
+  },
+  {
+    id: 3,
+    image: '/hero-slides/slide-3-gondar-arch.png',
+    title: 'Historic Castles of Gondar',
+    location: 'Ancient Stone Gateways',
+    badge: 'Medieval Architectural Marvel'
+  },
+  {
+    id: 4,
+    image: '/hero-slides/slide-4-gheralta.png',
+    title: 'Gheralta Sandstone Mountains',
+    location: 'Hawzen, Tigray',
+    badge: 'Sky-High Rock Churches'
+  },
+  {
+    id: 5,
+    image: '/hero-slides/slide-5-danakil.png',
+    title: 'Danakil Depression & Dallol Springs',
+    location: 'Afar Triangle',
+    badge: 'Vibrant Geothermal Wonder'
+  }
+]
+
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+
+  // Auto-advance slideshow every 5 seconds (pauses on hover)
+  useEffect(() => {
+    if (isPaused) return
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [isPaused])
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+  }
+
   return (
     <div className="triply-home">
       {/* ============================================================ */}
-      {/* 1. HERO SECTION                                              */}
+      {/* 1. HERO SECTION WITH BACKGROUND SLIDESHOW                    */}
       {/* ============================================================ */}
-      <section className="triply-hero">
-        <div className="triply-hero__bg">
-          <img 
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=85" 
-            alt="Hikers exploring majestic mountain wilderness" 
-            className="triply-hero__img"
-          />
+      <section 
+        className="triply-hero"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {/* Animated Background Slides */}
+        <div className="triply-hero__slides">
+          {heroSlides.map((slide, index) => (
+            <div 
+              key={slide.id} 
+              className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+            >
+              <img 
+                src={slide.image} 
+                alt={slide.title} 
+                className="hero-slide__img"
+              />
+            </div>
+          ))}
           <div className="triply-hero__overlay"></div>
         </div>
 
         <div className="container triply-hero__container">
+          {/* Active Landmark Subtitle Pill */}
+          <div className="hero-slide-badge-wrap">
+            <span className="slide-pulse-dot"></span>
+            <span className="slide-landmark-title">{heroSlides[currentSlide].title}</span>
+            <span className="slide-sep">•</span>
+            <span className="slide-landmark-loc">{heroSlides[currentSlide].location}</span>
+          </div>
+
           <div className="triply-hero__content">
             {/* Big Bold Headline with Script Accent */}
             <div className="triply-hero__headline-wrap">
@@ -171,6 +252,31 @@ export default function Home() {
                 <FiArrowRight size={16} />
               </Link>
             </div>
+          </div>
+
+          {/* Slider Navigation Bar */}
+          <div className="hero-slider-controls">
+            <button onClick={prevSlide} className="hero-nav-btn" aria-label="Previous Slide">
+              <FiChevronLeft size={20} />
+            </button>
+
+            <div className="hero-nav-dots">
+              {heroSlides.map((s, idx) => (
+                <button
+                  key={s.id}
+                  onClick={() => setCurrentSlide(idx)}
+                  className={`hero-dot-btn ${idx === currentSlide ? 'active' : ''}`}
+                  aria-label={`Slide ${idx + 1}: ${s.title}`}
+                >
+                  <span className="dot-bar"></span>
+                  <span className="dot-tooltip">{s.title}</span>
+                </button>
+              ))}
+            </div>
+
+            <button onClick={nextSlide} className="hero-nav-btn" aria-label="Next Slide">
+              <FiChevronRight size={20} />
+            </button>
           </div>
         </div>
       </section>
