@@ -1,0 +1,297 @@
+/* Triply Navbar Styling */
+.triply-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.35s ease;
+  background: transparent;
+}
+
+/* Topbar */
+.triply-topbar {
+  background: rgba(18, 24, 32, 0.75);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 0;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.triply-topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.triply-topbar__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.topbar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.topbar-icon {
+  color: #E26D3C;
+}
+
+.topbar-sep {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.regional-tag span {
+  color: #48BB78;
+  font-weight: 600;
+}
+
+.triply-topbar__right {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #E26D3C;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.topbar-link:hover {
+  color: #FFFFFF;
+}
+
+/* Main Nav */
+.triply-navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  transition: padding 0.3s ease;
+}
+
+.triply-navbar--scrolled {
+  background: rgba(18, 24, 32, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+.triply-navbar--scrolled .triply-navbar__inner {
+  padding: 10px 0;
+}
+
+/* Logo */
+.triply-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.triply-logo__icon-wrap {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.triply-logo__svg {
+  width: 32px;
+  height: 32px;
+}
+
+.triply-logo__text {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.38rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+.triply-logo__text .brand-ethiopia {
+  color: #E26D3C;
+  font-weight: 700;
+}
+
+
+/* Nav links */
+.triply-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.triply-nav__link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 4px 0;
+}
+
+.triply-nav__link:hover {
+  color: #FFFFFF;
+}
+
+.triply-nav__link--active {
+  color: #E26D3C;
+  font-weight: 600;
+}
+
+.triply-nav__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #E26D3C;
+}
+
+/* Actions & Socials */
+.triply-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-rfq-btn {
+  background: rgba(226, 109, 60, 0.2);
+  border: 1px solid #E26D3C;
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.nav-rfq-btn:hover {
+  background: #E26D3C;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(226, 109, 60, 0.35);
+}
+
+.triply-nav__socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-icon-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.social-icon-btn:hover {
+  background: #E26D3C;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Mobile burger */
+.triply-burger {
+  display: none;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* Mobile drawer */
+.triply-mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .triply-topbar {
+    display: none;
+  }
+
+  .triply-nav__links,
+  .triply-nav__actions {
+    display: none;
+  }
+
+  .triply-burger {
+    display: block;
+  }
+
+  .triply-mobile {
+    display: block;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(18, 24, 32, 0.98);
+    backdrop-filter: blur(16px);
+    padding: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateY(-120%);
+    transition: transform 0.3s ease;
+  }
+
+  .triply-mobile--open {
+    transform: translateY(0);
+  }
+
+  .triply-mobile__links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .triply-mobile__link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+
+  .triply-mobile__link--active {
+    color: #E26D3C;
+  }
+
+  .mobile-rfq-btn {
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 100px;
+    margin-top: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .triply-mobile__socials {
+    display: flex;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 8px;
+  }
+}
