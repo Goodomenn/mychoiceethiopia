@@ -12,12 +12,11 @@ const tourLinks = [
 ]
 
 const corporateLinks = [
-  { label: 'Corporate Fleet & 4x4 Leasing', path: '/corporate-fleet' },
-  { label: '30-Day Post-Paid Credit Facility', path: '/corporate-fleet' },
-  { label: '17 Grade-8 Certified Drivers', path: '/corporate-fleet' },
+  { label: 'Corporate Governance Overview', path: '/governance' },
   { label: 'Anti-Bribery & Corruption Policy', path: '/governance' },
   { label: 'Occupational Health & Safety (OHS)', path: '/governance' },
   { label: 'Environmental Stewardship Charter', path: '/governance' },
+  { label: 'Employee Code of Conduct', path: '/governance' },
 ]
 
 export default function Footer() {
@@ -33,9 +32,9 @@ export default function Footer() {
             </span>
           </div>
           <div className="comp-bar-right">
-            <Link to="/corporate-fleet#b2b-rfq" className="comp-bar-link">
+            <Link to="/governance" className="comp-bar-link">
               <FiFileText size={14} />
-              <span>Download Pre-Qualification Dossier</span>
+              <span>Corporate Governance & Compliance</span>
             </Link>
           </div>
         </div>
@@ -80,7 +79,7 @@ export default function Footer() {
 
         {/* Corporate & Governance */}
         <div className="triply-footer__col">
-          <h4 className="triply-footer__col-title">B2B Fleet & Governance</h4>
+          <h4 className="triply-footer__col-title">Corporate Governance</h4>
           <ul className="triply-footer__links">
             {corporateLinks.map((l, i) => (
               <li key={i}><Link to={l.path}>{l.label}</Link></li>
@@ -127,13 +126,13 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="triply-footer__bottom">
         <div className="container triply-footer__bottom-inner">
-          <p>&copy; {new Date().getFullYear()} MyChoice Ethiopia Tours & Fleet Operations. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} MyChoice Ethiopia Tours & Travel. All rights reserved.</p>
           <div className="triply-footer__legal">
             <Link to="/governance">Code of Conduct</Link>
             <span className="dot">&bull;</span>
             <Link to="/governance">Anti-Bribery Policy</Link>
             <span className="dot">&bull;</span>
-            <Link to="/corporate-fleet">Credit Terms</Link>
+            <Link to="/contact">Booking Terms</Link>
             <span className="dot">&bull;</span>
             <Link to="/contact">Contact Hubs</Link>
           </div>

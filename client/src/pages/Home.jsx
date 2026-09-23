@@ -305,14 +305,14 @@ export default function Home() {
             </div>
 
             <div className="funnel-col b2b-funnel">
-              <div className="funnel-badge b2b-badge">B2B INSTITUTIONAL & NGO LOGISTICS</div>
-              <h3 className="funnel-title">UN Agencies, Diplomatic Missions & NGO Tenders</h3>
+              <div className="funnel-badge b2b-badge">BESPOKE PRIVATE & VIP EXPEDITIONS</div>
+              <h3 className="funnel-title">Tailor-Made VIP & Group Expeditions</h3>
               <p className="funnel-desc">
-                Verified commercial fleet leasing, 17 Grade-8 certified drivers, 30-day post-paid credit terms, 
-                and official VAT #80692 compliance engineered for institutional tenders.
+                Custom private itineraries crafted by senior tour designers, luxury accommodations, 
+                private domestic flight charters, and personalized 24/7 concierge support.
               </p>
-              <Link to="/corporate-fleet" className="funnel-btn b2b-btn">
-                <span>Access Corporate Fleet Portal</span>
+              <Link to="/contact" className="funnel-btn b2b-btn">
+                <span>Request Custom Itinerary</span>
                 <FiArrowRight size={16} />
               </Link>
             </div>
@@ -426,8 +426,8 @@ export default function Home() {
               </p>
             </div>
             <div className="trust-actions">
-              <Link to="/corporate-fleet" className="triply-btn-orange">
-                <span>Fleet & Pre-Qualification</span>
+              <Link to="/contact" className="triply-btn-orange">
+                <span>Plan Your Journey</span>
                 <FiArrowRight size={16} />
               </Link>
               <Link to="/governance" className="trust-link-secondary">

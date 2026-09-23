@@ -8,7 +8,6 @@ const navLinks = [
   { path: '/', label: 'Home' },
   { path: '/tours', label: 'Tours' },
   { path: '/destinations', label: 'Destinations' },
-  { path: '/corporate-fleet', label: 'Corporate Fleet' },
   { path: '/governance', label: 'Governance' },
   { path: '/blog', label: 'Blog' },
   { path: '/contact', label: 'Contact' },
@@ -51,9 +50,9 @@ export default function Navbar() {
           </div>
 
           <div className="triply-topbar__right">
-            <Link to="/corporate-fleet#b2b-rfq" className="topbar-link">
-              <FiFileText size={13} />
-              <span>NGO / UN Fleet Tender Desk</span>
+            <Link to="/contact" className="topbar-link">
+              <FiPhone size={13} />
+              <span>24/7 Dedicated Concierge Desk</span>
             </Link>
           </div>
         </div>
@@ -91,8 +90,8 @@ export default function Navbar() {
 
         {/* Right CTA & Socials */}
         <div className="triply-nav__actions">
-          <Link to="/corporate-fleet" className="nav-rfq-btn">
-            Fleet RFQ
+          <Link to="/contact" className="nav-rfq-btn">
+            Book a Tour
           </Link>
 
           <div className="triply-nav__socials">
@@ -130,11 +129,11 @@ export default function Navbar() {
           ))}
 
           <Link 
-            to="/corporate-fleet" 
+            to="/contact" 
             className="triply-btn-orange mobile-rfq-btn"
             onClick={() => setOpen(false)}
           >
-            Request Fleet RFQ / Tender Pack
+            Plan Your Expedition
           </Link>
 
           <div className="triply-mobile__socials">

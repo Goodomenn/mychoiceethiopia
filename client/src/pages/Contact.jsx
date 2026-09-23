@@ -54,8 +54,8 @@ const operationalPersonnel = [
     contact: 'travel@mychoiceethiopia.com'
   },
   {
-    role: 'Commercial Logistics Officer (B2B Fleet & Institutional Tenders)',
-    desk: 'Manages long-term vehicle leasing, 30-day post-paid credit agreements, and Grade-8 driver assignments for UN/NGO tenders.',
+    role: 'Commercial Operations Officer (Group & Institutional Travel)',
+    desk: 'Manages delegation transport, private group charters, and customized organizational travel arrangements across Ethiopia.',
     contact: 'logistics@mychoiceethiopia.com'
   },
   {
@@ -144,7 +144,7 @@ export default function Contact() {
           </h1>
           <p className="page-hero__subtitle">
             Direct operational presence in Addis Ababa, Semera, and Mekelle. 
-            Connect with our tour designers or corporate fleet logistics officers for rapid dispatch.
+            Connect with our tour designers and regional operations officers for rapid dispatch.
           </p>
         </div>
       </section>
@@ -291,16 +291,16 @@ export default function Contact() {
                           onClick={() => setInquiryType('b2b')}
                         >
                           <FiTruck size={15} />
-                          <span>Corporate Fleet / NGO Tender</span>
+                          <span>Group & Institutional Travel</span>
                         </button>
                       </div>
 
                       <h3 className="form-heading">
-                        {inquiryType === 'b2b' ? 'Request Institutional Fleet Tender' : 'Request Tailor-Made Itinerary'}
+                        {inquiryType === 'b2b' ? 'Request Group / Delegation Travel Proposal' : 'Request Tailor-Made Itinerary'}
                       </h3>
                       <span className="form-subheading">
                         {inquiryType === 'b2b' 
-                          ? 'Immediate proforma invoice and vendor pack generation under VAT #80692.'
+                          ? 'Prompt quotation and verified vendor pack generation under VAT #80692.'
                           : 'Fill in your travel preferences and we will craft your bespoke itinerary.'}
                       </span>
                     </div>
