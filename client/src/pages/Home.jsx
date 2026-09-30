@@ -35,7 +35,7 @@ const categories = [
     title: 'City Tours',
     count: '5 Tours',
     price: '550 Birr',
-    img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80',
+    img: '/category-cards/cat-1-city-tours.jpg',
     icon: <FaSignHanging />,
     link: '/destinations'
   },
@@ -44,7 +44,7 @@ const categories = [
     title: 'Museum Tours',
     count: '5 Tours',
     price: '450 Birr',
-    img: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&q=80',
+    img: '/category-cards/cat-2-museum-tours.jpg',
     icon: <FaLandmark />,
     link: '/destinations'
   },
@@ -53,7 +53,7 @@ const categories = [
     title: 'Beaches & Lakes',
     count: '10 Tours',
     price: '100 Birr',
-    img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',
+    img: '/category-cards/cat-3-beaches-lakes.png',
     icon: <FaWater />,
     link: '/destinations'
   },
@@ -62,7 +62,7 @@ const categories = [
     title: 'Hiking',
     count: '4 Tours',
     price: '250 Birr',
-    img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+    img: '/category-cards/cat-4-hiking.jpg',
     icon: <FaPersonHiking />,
     link: '/tours'
   },
@@ -71,7 +71,7 @@ const categories = [
     title: 'Cruises & Boats',
     count: '8 Tours',
     price: '100 Birr',
-    img: 'https://images.unsplash.com/photo-1548574505-5e239809ee19?w=600&q=80',
+    img: '/category-cards/cat-5-cruises-boats.png',
     icon: <FaShip />,
     link: '/tours'
   }
