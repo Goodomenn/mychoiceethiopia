@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FiMenu, FiX, FiPhone, FiShield, FiFileText } from 'react-icons/fi'
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'
+import brandLogo from '../assets/logo.png'
 import './Navbar.css'
 
 const navLinks = [
@@ -60,14 +61,14 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <div className="triply-navbar__inner container">
-        {/* Brand Logo with Sun / Compass Mark */}
+        {/* Brand Logo with Official Sun Mark */}
         <Link to="/" className="triply-logo" onClick={() => setOpen(false)}>
           <div className="triply-logo__icon-wrap">
-            <svg viewBox="0 0 24 24" className="triply-logo__svg" fill="none" stroke="currentColor">
-              <circle cx="12" cy="12" r="9" stroke="#E26D3C" strokeWidth="1.8" />
-              <path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1" stroke="#E26D3C" strokeWidth="1.8" strokeLinecap="round" />
-              <circle cx="12" cy="12" r="3" fill="#E26D3C" />
-            </svg>
+            <img 
+              src={brandLogo} 
+              alt="MyChoice Ethiopia Logo" 
+              style={{ width: '44px', height: '44px', objectFit: 'contain' }} 
+            />
           </div>
           <span className="triply-logo__text">
             MyChoice <span className="brand-ethiopia">Ethiopia</span>

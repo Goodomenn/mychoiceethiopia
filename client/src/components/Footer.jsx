@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FiPhone, FiMail, FiMapPin, FiShield, FiLock, FiFileText } from 'react-icons/fi'
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa'
+import brandLogo from '../assets/logo.png'
 import './Footer.css'
 
 const tourLinks = [
@@ -45,11 +46,11 @@ export default function Footer() {
         <div className="triply-footer__brand">
           <Link to="/" className="triply-footer__logo">
             <div className="triply-logo__icon-wrap">
-              <svg viewBox="0 0 24 24" className="triply-logo__svg" fill="none" stroke="currentColor">
-                <circle cx="12" cy="12" r="9" stroke="#E26D3C" strokeWidth="1.8" />
-                <path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1" stroke="#E26D3C" strokeWidth="1.8" strokeLinecap="round" />
-                <circle cx="12" cy="12" r="3" fill="#E26D3C" />
-              </svg>
+              <img 
+                src={brandLogo} 
+                alt="MyChoice Ethiopia Logo" 
+                style={{ width: '48px', height: '48px', objectFit: 'contain' }} 
+              />
             </div>
             <span className="triply-footer__brand-name">
               MyChoice <span style={{ color: '#E26D3C' }}>Ethiopia</span>
